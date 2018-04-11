@@ -24,13 +24,15 @@ public class JsonMapper {
 		try {
 			
 			String respath = "AccountHolder.json";
+			AccountHolder[] accountHolderArray;
 			InputStream in = JsonMapper.class.getResourceAsStream(respath);
-			if ( in == null )
-			    throw new Exception("resource not found: " + respath);
+			if ( in == null ){
+				String accountHolder = "[{\"id\":\"12345\",\"name\":\"Arjun's Family\",\"number\":\"9737363736\"},{\"id\":\"54321\",\"name\":\"Uday's Family\",\"number\":\"\"}]";
+				accountHolderArray = mapper.readValue(accountHolder, AccountHolder[].class);
+			}else{
+				accountHolderArray = mapper.readValue(in, AccountHolder[].class);
+			}
 
-
-			// Convert JSON string from file to Object
-			AccountHolder[] accountHolderArray = mapper.readValue(in, AccountHolder[].class);
 			return new ArrayList<AccountHolder>(Arrays.asList(accountHolderArray));
 			
 		} catch (JsonGenerationException e) {
