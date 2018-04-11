@@ -1,17 +1,32 @@
 package com.celfocus.online.interview.topups.dto;
 
+/**
+ * The class represents attrbiutes of account holder
+ * 
+ * @author Arjun solanki
+ *
+ */
 public class AccountHolder {
 	
+	/**
+	 * unique identifier for Account holder
+	 */
 	private String id;
+	
+	/**
+	 * Name for account holder
+	 */
 	private String name;
+	
+	/**
+	 * mobile for account holder
+	 */
 	private String number;
-	//private String displayName;
 	
 	public AccountHolder(String id, String name, String number) {
 		this.id=id;
 		this.name=name;
 		this.number=number;
-		//this.displayName = id +" - "+name;
 	}
 	
 	public AccountHolder(){}

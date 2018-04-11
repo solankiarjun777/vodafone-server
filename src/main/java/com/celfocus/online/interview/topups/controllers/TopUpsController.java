@@ -18,11 +18,26 @@ import com.celfocus.online.interview.topups.dto.Topup;
 import com.celfocus.online.interview.topups.dto.TopupResponse;
 import com.celfocus.online.interview.topups.util.JsonMapper;
 
+/**
+ * The class contains topup related rest web service over json
+ * 
+ * @author Arjun solanki
+ *
+ */
+
 @Controller
 @RequestMapping("/topups")
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class TopUpsController {
 
+	/**
+	 * This method used to recharge mobile number.
+	 * This accept as argument {@link Topup} and {@link HttpServletRequest}
+	 * 
+	 * @param topupDto - required information to recharge mobile number
+	 * @param request - http servlet request object
+	 * @return {@link TopupResponse} return conversionID and timestamp with errorMessage and code
+	 */
 	
 	@RequestMapping(value = "/recharge", method = RequestMethod.POST)
 	public ResponseEntity<TopupResponse> topupRecharge(
@@ -48,6 +63,10 @@ public class TopUpsController {
 		response.setCode("Success");
 		return new ResponseEntity<TopupResponse>(response, HttpStatus.OK);
 	}
+	/**
+	 * This method provide list of account holder configured in system.
+	 * @return list of {@link AccountHolder}} 
+	 */
 	
 	@ResponseBody
 	@RequestMapping(value = "/accounts", method = RequestMethod.GET)

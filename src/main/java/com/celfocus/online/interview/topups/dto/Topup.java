@@ -2,15 +2,38 @@ package com.celfocus.online.interview.topups.dto;
 
 import java.time.LocalDateTime;
 
+/**
+ * This class represents information required to topup recharge
+ * 
+ * @author Arjun solanki
+ *
+ */
 public class Topup extends TopupResponse {
 
-    private String conversionID;
-    private String financialAccount;
-    private String phoneNumber;
-    private LocalDateTime timeStamp;
-    private boolean termsAndConditionResult;
-    private String amount;
-    
+	/**
+	 *  unique conversion id for topup recharge
+	 */
+	private String conversionID;
+	/**
+	 *  unique id associated with account holder
+	 */
+	private String financialAccount;
+	/**
+	 *  Mobile number that need to be recharge
+	 */
+	private String phoneNumber;
+	/**
+	 * particular recharge transaction timestamp
+	 */
+	private LocalDateTime timeStamp;
+	/**
+	 * term and condition checkbox value, that user has to agree upon
+	 */
+	private boolean termsAndConditionResult;
+	/**
+	 * recharge amount value 
+	 */
+	private String amount;
 
 	public String getConversionID() {
 		return conversionID;
@@ -59,7 +82,5 @@ public class Topup extends TopupResponse {
 	public void setFinancialAccount(String financialAccount) {
 		this.financialAccount = financialAccount;
 	}
-
-   
 
 }
